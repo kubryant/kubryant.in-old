@@ -2,20 +2,16 @@
  * the main route handler
  */
 
-(function() {
-  'use strict';
+const express = require('express');
+const router = express.Router();
 
-  var express = require('express');
-  var router = express.Router();
+const home = require('../controllers/home');
+const error = require('../controllers/error');
 
-  var home = require('../controllers/home');
-  var error = require('../controllers/error');
+// main content
+router.get('/', home);
 
-  // main content
-  router.get('/', home);
+// error on all other routes
+router.get('*', error);
 
-  // error on all other routes
-  router.get('*', error);
-
-  module.exports = router;
-}());
+export default router;

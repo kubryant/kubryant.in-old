@@ -6,7 +6,7 @@ var dir = path.resolve(__dirname);
 var config = {
   entry: './client/js/index',
   output: {
-    path: path.join(dir, 'build'),
+    path: path.join(dir, 'build/client'),
     filename: '/js/main.js'
   },
   resolve: {
@@ -41,7 +41,10 @@ var config = {
         loader: 'ng-cache?prefix=[dir]!apply!jade'
       }
     ]
-  }
+  },
+	eslint: {
+		configFile: './.eslintrc'
+	}
 };
 
 module.exports = config;

@@ -3,7 +3,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 
-var routes = require('./server/routes');
+var routes = require('./build/server/routes');
 
 var app = express();
 
@@ -13,7 +13,7 @@ app.set('view engine', 'jade');
 
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'build', 'client')));
 
 app.use('/', routes);
 
