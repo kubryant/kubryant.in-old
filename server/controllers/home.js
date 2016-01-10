@@ -3,11 +3,10 @@
  */
 
 function render(req, res) {
-  res.render('index',
-      {
-        title: 'Under construction',
-        description: 'Stay tuned.'
-      });
+  res.render('index', {
+    title: 'Under construction',
+    description: 'Stay tuned.'
+  });
 }
 
 export default render;
