@@ -1,0 +1,19 @@
+{
+  "name": "kubryant.in",
+  "description": "Bryant's personal website",
+  "main": "app.js",
+  "authors": [
+    "Bryant Ku"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/kubryant/kubryant.in",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

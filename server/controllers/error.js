@@ -8,6 +8,7 @@
   function render(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
+    res.status(err.status);
 
     // don't display error and stack on production
     if(process.env.NODE_ENV === 'production') {

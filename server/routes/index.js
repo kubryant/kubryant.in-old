@@ -8,11 +8,11 @@
   var express = require('express');
   var router = express.Router();
 
-  var index = require('../controllers');
+  var home = require('../controllers/home');
   var error = require('../controllers/error');
 
   // main content
-  router.get('/', index);
+  router.get('/', home);
 
   // error on all other routes
   router.get('*', error);
