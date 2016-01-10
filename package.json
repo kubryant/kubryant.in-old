@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "babel server -d build/server; webpack",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "clean": "rm -rf build"
   },
   "repository": {
     "type": "git",
