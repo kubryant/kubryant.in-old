@@ -11,7 +11,7 @@ routes.$inject = dependencies;
 
 function routes($stateProvider) {
   $stateProvider
-    .state('/', {
+    .state('home', {
       url: '/',
       views: {
         'hello': {
