@@ -28,7 +28,6 @@
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
-    "apply-loader": "^0.1.0",
     "autoprefixer-loader": "^3.1.0",
     "babel-cli": "^6.4.0",
     "babel-core": "^6.4.0",
@@ -40,7 +39,7 @@
     "eslint": "^1.10.3",
     "eslint-loader": "^1.2.0",
     "file-loader": "^0.8.5",
-    "jade-loader": "^0.8.0",
+    "jade-html-loader": "0.0.3",
     "ng-cache-loader": "0.0.15",
     "node-sass": "^3.4.2",
     "sass-loader": "^3.1.2",

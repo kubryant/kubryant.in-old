@@ -4,10 +4,11 @@ var path = require('path');
 var dir = path.resolve(__dirname);
 
 var config = {
+  devtool: 'source-map',
   entry: {
     vendor: [
-      './bower_components/angular/angular',
-      './bower_components/angular-ui-router/release/angular-ui-router'
+      path.join(dir, 'bower_components/angular'),
+      path.join(dir, 'bower_components/angular-ui-router/release/angular-ui-router')
     ],
     home: './client/js/home'
   },
@@ -16,7 +17,11 @@ var config = {
     filename: '/js/[name].js'
   },
   resolve: {
-    extensions: ['', '.js', '.scss']
+    extensions: ['', '.js', '.scss', '.jade'],
+    alias: {
+      "angular": path.join(dir, 'bower_components/angular'),
+      "angular-ui-router": path.join(dir, 'bower_components/angular-ui-router/release/angular-ui-router')
+    }
   },
   module: {
     preLoaders: [
@@ -44,7 +49,7 @@ var config = {
       },
       {
         test: /\.jade$/,
-        loader: 'ng-cache?prefix=[dir]!apply!jade'
+        loader: 'ng-cache!jade-html'
       }
     ]
   },
