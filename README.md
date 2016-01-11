@@ -8,6 +8,7 @@ templating is handled by Jade
 
 # to run
 npm install  
+bower install
 npm start
 
 server will run on localhost:3000
