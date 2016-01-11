@@ -12,3 +12,4 @@ coverage
 
 # dependency directory
 node_modules
+bower_components

@@ -4,18 +4,24 @@ var path = require('path');
 var dir = path.resolve(__dirname);
 
 var config = {
-  entry: './client/js/index',
+  entry: {
+    vendor: [
+      './bower_components/angular/angular',
+      './bower_components/angular-ui-router/release/angular-ui-router'
+    ],
+    home: './client/js/home'
+  },
   output: {
     path: path.join(dir, 'build/client'),
-    filename: '/js/main.js'
+    filename: '/js/[name].js'
   },
   resolve: {
-    extensions: ['.js', '.scss']
+    extensions: ['', '.js', '.scss']
   },
   module: {
     preLoaders: [
       {
-        test: /\.js?$/, loader: 'eslint-loader', exclude: /node_modules/
+        test: /\.js?$/, loader: 'eslint-loader', exclude: /node_modules|bower_components/
       }
     ],
     loaders: [
@@ -33,7 +39,7 @@ var config = {
       },
       {
         test: /\.js?$/,
-        exclude: /node_modules/,
+        exclude: /node_modules|bower_components/,
         loader: 'babel'
       },
       {
@@ -44,7 +50,10 @@ var config = {
   },
 	eslint: {
 		configFile: './.eslintrc'
-	}
+	},
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin('vendor', '/js/vendors.js')
+  ]
 };
 
 module.exports = config;

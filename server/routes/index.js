@@ -8,7 +8,7 @@ const router = express.Router();
 const home = require('../controllers/home');
 const error = require('../controllers/error');
 
-// main content
+// home
 router.get('/', home);
 
 // error on all other routes

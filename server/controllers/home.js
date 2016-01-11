@@ -1,9 +1,9 @@
 /*
- * controller to handle the main content
+ * controller to handle the home page
  */
 
 function render(req, res) {
-  res.render('index', {
+  res.render('home', {
     title: 'Under construction',
     description: 'Stay tuned.'
   });
