@@ -18,5 +18,5 @@ function routes($urlRouterProvider) {
 }
 
 // import pages
-//import './pages/home/home.route';
-require('./pages/home/home.route');
+import './pages/home/home.route';
+//require('./pages/home/home.route');

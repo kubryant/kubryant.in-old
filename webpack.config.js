@@ -13,7 +13,7 @@ var config = {
     home: './client/js/home'
   },
   output: {
-    path: path.join(dir, 'build/client'),
+    path: path.join(dir, 'build'),
     filename: '/js/[name].js'
   },
   resolve: {
