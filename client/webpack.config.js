@@ -10,7 +10,7 @@ var config = {
       path.join(dir, 'bower_components/angular'),
       path.join(dir, 'bower_components/angular-ui-router/release/angular-ui-router')
     ],
-    home: './client/js/home'
+    home: path.join(dir, 'js/home')
   },
   output: {
     path: path.join(dir, 'build'),
@@ -24,11 +24,6 @@ var config = {
     }
   },
   module: {
-    preLoaders: [
-      {
-        test: /\.js?$/, loader: 'eslint-loader', exclude: /node_modules|bower_components/
-      }
-    ],
     loaders: [
       {
         test: /\.(svg|ttf|eot|woff)\?$/,
@@ -53,9 +48,6 @@ var config = {
       }
     ]
   },
-	eslint: {
-		configFile: './.eslintrc'
-	},
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendor', '/js/vendors.js')
   ]

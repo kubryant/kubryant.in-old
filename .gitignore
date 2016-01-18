@@ -4,12 +4,6 @@ build
 # logs
 *.log
 
-# directory for instrumented libs
-lib-cov
-
-# coverage directory
-coverage
-
 # dependency directory
-node_modules
 bower_components
+node_modules
