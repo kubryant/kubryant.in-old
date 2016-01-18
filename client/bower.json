@@ -1,7 +1,6 @@
 {
   "name": "kubryant.in",
   "description": "Bryant's personal website",
-  "main": "app.js",
   "authors": [
     "Bryant Ku"
   ],
