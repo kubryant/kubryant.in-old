@@ -6,5 +6,5 @@ client side code is transpiled by Babel and bundled with Webpack
 templating is handled by Jade
 
 # to run
-bower install  
-go install
+cd client && npm install && bower install  
+cd ../ && go install
