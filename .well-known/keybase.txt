@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/kubryant
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://kubryant.in
+  * I am kubryant (https://keybase.io/kubryant) on keybase.
+  * I have a public key with fingerprint E197 8289 9663 46C3 EDC0  D8EF 6A92 CC01 BBE3 AEC4
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "010172ed6c54894a962faabea8474b04c22785397b8d9051d2911b2cc43205430e7d0a",
+            "fingerprint": "e1978289966346c3edc0d8ef6a92cc01bbe3aec4",
+            "host": "keybase.io",
+            "key_id": "6a92cc01bbe3aec4",
+            "kid": "010172ed6c54894a962faabea8474b04c22785397b8d9051d2911b2cc43205430e7d0a",
+            "uid": "7f718838dcd71d695f05ebae12ea8d00",
+            "username": "kubryant"
+        },
+        "revoke": {
+            "sig_ids": [
+                "ef8a4d9d9e33b2361daeccae660157d8f330b1ee238144f9721bcfd334445efe0f"
+            ]
+        },
+        "service": {
+            "hostname": "kubryant.in",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1459009896,
+    "expire_in": 157680000,
+    "prev": "9af31169a70d950de152ad7d5a93590768ffb459d2d3a2a85e5a62375c3a29ae",
+    "seqno": 17,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.51
+Comment: https://keybase.io/crypto
+
+yMJpAnicrZJbaBVHGMfPqSbHhFYieEWqspYqmsa57OzuHCMFqSiCD4qKYuQ4s/Pt
+yZJk93TPOTFHiQgWa6GUVDTxWqnx+iIqggqKiQrVKKilRIKxBn3oBQIFQxpLm3Q2
+2JfSx+7LMrP/7/f95tu5+96ERGVyoOfjQ5MmJFqSD7pfFxMbh6/X7zRkqEpGeqfR
+AOMvaFSQL2QafGWkDYQRtgkoy2Wmw03BLeIJIUE4pm1KZLqE2A6j3JaO4ohhRTjG
+kriuSQliJkVgKySMasPzgyxEucgPChoLmNsOcTi3LGpaLgXlIuWAZwmuaxGWEqgA
+19SF9WE+rtByUuShxg/1nl5kxvX+I/8/exfHcbZnY8ehjnKVjZXFmYcYSAGYaKJC
+KA7mIQpEE8SuRRmVhD5oa7URQXPYAPFc835WS+eN9BYDPEeYiisOlEpCLay0vCvA
+shBmtnI8SpHEAIQ62DQ9bhMsXU9RapomAw+QZ2zVbN2x2XfH4fGU/tW9xg+0Vi4K
+C6EbNuoP9YVCLp+OpQqlXJzcDjLzlpGRfqD0L9IVzRDl/TAw0lgn3YIfQ7HJOELc
+4Va1AS05P4KMHyeYbTlIP3EfaNZILjyKscWFjRRnSAFmRChbMcGpRui450kNU0RR
+QYTDgAmLUJu5eskFGPGpPg1Czba1p8hqph5cIArFCIzW2111ExPJykR52Tvx3U1U
+VlT9c6OnrEv9NXVoW8fgzN5vln9b0dW5q+qzIz3n+nvXH//t0NfTasiJuheLL9+f
+f3Z9fV/7A9lR9vrdhx0jG87/uPRoatRt/aht+pPVas7BFY9f/DK0Y//c1HBp1a8n
+N6/6fWVxlH+5d/j9WXfmdQ3dL5W+aPxjUTIcuSoq/jw1Nmv67TUf3lv4/MDka8dO
+z2wa6WsTPZmbxzZlE0/3DZ21VvQ+qzvy/GXvDzNy+3/q21A+WD534NF3N5qy/oLT
+Sz6ouZIcHL2U3lM7tuarZao6VXxVmym7vnzOmXS3WpmK+m8Md/counle7ewd7e1X
+ZoRrX1bhN98Hnw/cam07PHbhVX/n3t1s3/Flu29Nbllw8c7Pn2z5GyWIYMs=
+=zQvP
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/kubryant
+
+==================================================================
