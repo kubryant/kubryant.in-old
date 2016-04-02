@@ -16,6 +16,7 @@ func NewApp() *App {
 	// app.Run()
 
 	t := NewTemplate()
+	c := NewConfig()
 	e := echo.New()
 
 	e.SetRenderer(t)
@@ -25,7 +26,7 @@ func NewApp() *App {
 
 	e.Get("/", home())
 
-	e.Run(standard.New(":3000"))
+	e.Run(standard.New(":" + c["port"]))
 
 	return app
 }
