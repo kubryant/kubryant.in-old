@@ -1,3 +1,7 @@
+# go
+app
+bindata.go
+
 # build
 build
 
