@@ -29,7 +29,7 @@ func NewApp() *App {
 	e.Get("/", home())
 	e.Get("/*", client())
 
-	e.Run(standard.New(":" + c["port"]))
+	e.Run(standard.New(":" + c.Get("port")))
 
 	return app
 }

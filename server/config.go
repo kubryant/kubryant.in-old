@@ -6,7 +6,21 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-func NewConfig() map[string]string {
+type Config struct {
+	configMap map[string]string
+}
+
+func (c *Config) Get(key string) string {
+	data, ok := c.configMap[key]
+
+	if ok {
+		return data
+	}
+
+	return ""
+}
+
+func NewConfig() *Config {
 	c := make(map[string]string)
 	cs, err := Asset("config.yml/config.yml")
 
@@ -15,5 +29,7 @@ func NewConfig() map[string]string {
 		fmt.Println("error parsing config", err)
 	}
 
-	return c
+	return &Config{
+		configMap: c,
+	}
 }

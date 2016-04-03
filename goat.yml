@@ -1,18 +1,22 @@
 init_tasks:
- - command: "make stop"
- - command: "make run"
-   nowait: true
+ - command: "make"
 
 watchers:
  - extension: go
    directory: server
+   excludes:
+   - "bindata.go"
    tasks:
-   - command: "make stop"
-   - command: "make run"
-     nowait: true
+   - command: "make kill"
+   - command: "make server"
+
+ - extension: html
+   directory: static/templates
+   tasks:
+   - command: "make kill"
+   - command: "make server"
 
  - extension: js
    directory: client
    tasks:
-   - command: "make catjs"
-   - command: "make uglifyjs"
+   - command: "make client"

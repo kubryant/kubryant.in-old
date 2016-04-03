@@ -1,9 +1,11 @@
 # go
-app
+kubryant.in
 bindata.go
 
 # build
 build
+static/client/js
+static/client/css
 
 # logs
 *.log
