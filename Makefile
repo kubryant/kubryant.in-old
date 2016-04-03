@@ -28,7 +28,14 @@ client:
 kill:
 	@killall -9 $(BINARY) 2>/dev/null || true
 
-clean:
+clean: kill
 	@if [ -f $(BINARY) ]; then rm -rf $(BINARY); fi
 	@if [ -f $(SERVER_DIR)/$(BINDATA) ]; then rm -rf $(SERVER_DIR)/$(BINDATA); fi
 	@if [ -d $(CLIENT_JS_FILES) ]; then rm -rf $(CLIENT_JS_FILES); fi
+
+install:
+	@go get -u github.com/jteeuwen/go-bindata/...
+	@go get github.com/yosssi/goat/...
+	@bower install
+	@npm install
+

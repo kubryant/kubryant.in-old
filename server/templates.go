@@ -9,7 +9,6 @@ import (
 	"github.com/labstack/echo"
 )
 
-// templates
 type Template struct {
 	templates *template.Template
 }

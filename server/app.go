@@ -11,40 +11,34 @@ import (
 )
 
 type App struct {
+	Config    *Config
+	Templates *Template
+	Echo      *echo.Echo
 }
 
 func NewApp() *App {
-	app := &App{}
-	// app.Run()
-
-	t := NewTemplate()
 	c := NewConfig()
+	t := NewTemplate()
 	e := echo.New()
 
-	e.SetRenderer(t)
-
-	e.Use(middleware.Logger())
-	e.Use(middleware.Recover())
-
-	e.Get("/", home())
-	e.Get("/*", client())
-
-	e.Run(standard.New(":" + c.Get("port")))
-
-	return app
+	return &App{
+		Config:    c,
+		Templates: t,
+		Echo:      e,
+	}
 }
 
-// func (app *App) Run() {
-// 	fmt.Println("run!")
+func (app *App) Run() {
+	app.Echo.SetRenderer(app.Templates)
 
-// 	data, err := Asset("static/home.html")
-// 	if err != nil {
-// 		fmt.Println("err", err)
-// 	}
+	app.Echo.Use(middleware.Logger())
+	app.Echo.Use(middleware.Recover())
 
-// 	s := string(data[:])
-// 	fmt.Println("s", s)
-// }
+	app.Echo.Get("/", home())
+	app.Echo.Get("/*", client())
+
+	app.Echo.Run(standard.New(":" + app.Config.Get("port")))
+}
 
 // route handlers
 func home() echo.HandlerFunc {

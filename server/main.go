@@ -1,7 +1,6 @@
 package main
 
 func main() {
-	NewApp()
-	// app := NewApp()
-	// app.Run()
+	app := NewApp()
+	app.Run()
 }
