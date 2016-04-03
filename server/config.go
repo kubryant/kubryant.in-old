@@ -8,7 +8,7 @@ import (
 
 func NewConfig() map[string]string {
 	c := make(map[string]string)
-	cs, err := Asset("config.yaml/config.yaml")
+	cs, err := Asset("config.yml/config.yml")
 
 	error := yaml.Unmarshal(cs, &c)
 	if error != nil {

@@ -1,0 +1,18 @@
+init_tasks:
+ - command: "make stop"
+ - command: "make run"
+   nowait: true
+
+watchers:
+ - extension: go
+   directory: server
+   tasks:
+   - command: "make stop"
+   - command: "make run"
+     nowait: true
+
+ - extension: js
+   directory: client
+   tasks:
+   - command: "make catjs"
+   - command: "make uglifyjs"
