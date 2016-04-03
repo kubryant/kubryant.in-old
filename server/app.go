@@ -3,6 +3,8 @@ package main
 import (
 	"net/http"
 
+	"github.com/elazarl/go-bindata-assetfs"
+
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/engine/standard"
 	"github.com/labstack/echo/middleware"
@@ -25,6 +27,7 @@ func NewApp() *App {
 	e.Use(middleware.Recover())
 
 	e.Get("/", home())
+	e.Get("/*", client())
 
 	e.Run(standard.New(":" + c["port"]))
 
@@ -48,4 +51,17 @@ func home() echo.HandlerFunc {
 	return func(c echo.Context) error {
 		return c.Render(http.StatusOK, "home.html", "")
 	}
+}
+
+func client() echo.HandlerFunc {
+	clientFS := http.FileServer(
+		&assetfs.AssetFS{
+			Asset:     Asset,
+			AssetDir:  AssetDir,
+			AssetInfo: AssetInfo,
+			Prefix:    "client",
+		},
+	)
+
+	return standard.WrapHandler(clientFS)
 }

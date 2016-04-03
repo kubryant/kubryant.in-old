@@ -13,7 +13,7 @@ var config = {
     home: path.join(dir, 'client/index.js')
   },
   output: {
-    path: path.join(dir, 'build'),
+    path: path.join(dir, 'static/client'),
     filename: '/js/[name].js'
   },
   resolve: {
@@ -55,7 +55,5 @@ var config = {
     // new webpack.optimize.CommonsChunkPlugin('vendor', '/js/vendors.js')
   ]
 };
-
-console.log(config);
 
 module.exports = config;

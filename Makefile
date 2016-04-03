@@ -1,17 +1,20 @@
 APP_NAME = app
-STATIC_FILES = static
 SERVER_DIR = server
+
 CONFIG = config.yaml
+STATIC_FILES = static
+CLIENT_JS_FILES = static/client/js
 
 dev: clean
-	@go-bindata -prefix=$(STATIC_FILES) -o=$(SERVER_DIR)/bindata.go -debug $(STATIC_FILES)/... $(CONFIG)
+	@webpack --watch &
+	@go-bindata -prefix=$(STATIC_FILES) -o=$(SERVER_DIR)/bindata.go -debug $(CONFIG) $(STATIC_FILES)/...
 	@go build -o=$(APP_NAME) $(SERVER_DIR)/*.go
 	@./$(APP_NAME)
 
 clean:
 	@rm -rf $(APP_NAME)
 	@rm -rf $(SERVER_DIR)/bindata.go
-	@rm -rf build
+	@rm -rf $(CLIENT_JS_FILES)
 
 install:
 	@go get
