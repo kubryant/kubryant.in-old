@@ -7,6 +7,3 @@ import:
   - engine/standard
   - middleware
 - package: gopkg.in/yaml.v2
-- package: github.com/yosssi/goat
-  subpackages:
-  - '...'

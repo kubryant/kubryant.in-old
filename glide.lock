@@ -1,5 +1,5 @@
-hash: 83a5c0b2d78b8673aafd7f4334d3a2dafb831be9ff5e10764d58f167d532b6cb
-updated: 2016-07-16T22:02:43.200411193-04:00
+hash: ec230286bf82f6e643ca9a67af6176b240188a815b8c7cc5b7bea5e8185bc083
+updated: 2016-07-16T22:33:26.220161276-04:00
 imports:
 - name: github.com/dgrijalva/jwt-go
   version: 01aeca54ebda6e0fbfafd0a524d234159c05ec20
@@ -26,10 +26,6 @@ imports:
   version: 56b76bdf51f7708750eac80fa38b952bb9f32639
 - name: github.com/valyala/fasttemplate
   version: 3b874956e03f1636d171bda64b130f9135f42cff
-- name: github.com/yosssi/goat
-  version: 1c6c74f7f1492614ac18069c4bfbeae608f97b43
-  subpackages:
-  - '...'
 - name: golang.org/x/net
   version: 45b61eaf18dd5c1b942e7666ff170b77dbbaf87b
   subpackages:
