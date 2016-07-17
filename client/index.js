@@ -1,7 +1,7 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 
-console.log(React);
-console.log(render);
-
-console.log('hello');
+ReactDOM.render(
+    <h1>Hello, world!</h1>,
+    document.getElementById('kubryant')
+);

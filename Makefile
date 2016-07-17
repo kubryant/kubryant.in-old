@@ -35,7 +35,12 @@ clean: kill
 
 install:
 	@go get -u github.com/jteeuwen/go-bindata/...
-	@go get github.com/yosssi/goat/...
+	@go get -u github.com/yosssi/goat/...
+	@glide install
 	@bower install
 	@npm install
 
+reset: clean
+	@if [ -d vendor ]; then rm -rf vendor; fi
+	@if [ -d bower_components ]; then rm -rf bower_components; fi
+	@if [ -d node_modules ]; then rm -rf node_modules; fi

@@ -1,0 +1,12 @@
+package: github.com/kubryant/kubryant.in
+import:
+- package: github.com/elazarl/go-bindata-assetfs
+- package: github.com/itsjamie/go-bindata-templates
+- package: github.com/labstack/echo
+  subpackages:
+  - engine/standard
+  - middleware
+- package: gopkg.in/yaml.v2
+- package: github.com/yosssi/goat
+  subpackages:
+  - '...'

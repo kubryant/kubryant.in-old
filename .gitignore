@@ -13,3 +13,4 @@ static/client/css
 # dependency directory
 bower_components
 node_modules
+vendor
