@@ -3,4 +3,6 @@ language: go
 go:
   - tip
 
-install: make install
+install:
+  - curl https://glide.sh/get | sh
+  - make install
