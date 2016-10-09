@@ -4,7 +4,7 @@ CLIENT_DIR = client
 GO_SOURCES = $(shell find $(SERVER_DIR) -type f -name '*.go')
 JS_SOURCES = $(shell find $(CLIENT_DIR) -type f -name '*.js')
 
-CONFIG = config.yml
+CONFIG = conf/config.yml
 STATIC_FILES = static
 CLIENT_JS_FILES = static/client/js
 
@@ -23,7 +23,7 @@ server:
 	@./$(BINARY) &
 
 client:
-	@webpack
+	@./node_modules/webpack/bin/webpack.js --config ./conf/webpack.config.js
 
 kill:
 	@killall -9 $(BINARY) 2>/dev/null || true
@@ -37,10 +37,8 @@ install:
 	@go get -u github.com/jteeuwen/go-bindata/...
 	@go get -u github.com/yosssi/goat/...
 	@glide install
-	@bower install
 	@npm install
 
 reset: clean
 	@if [ -d vendor ]; then rm -rf vendor; fi
-	@if [ -d bower_components ]; then rm -rf bower_components; fi
 	@if [ -d node_modules ]; then rm -rf node_modules; fi

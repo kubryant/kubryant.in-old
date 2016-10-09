@@ -1,7 +1,6 @@
 // var webpack = require('webpack');
 var path = require('path');
-
-var dir = path.resolve(__dirname);
+var dir = path.resolve(__dirname, '../');
 
 var config = {
   devtool: 'source-map',
@@ -10,18 +9,14 @@ var config = {
     //   path.join(dir, 'bower_components/angular'),
     //   path.join(dir, 'bower_components/angular-ui-router/release/angular-ui-router')
     // ],
-    home: path.join(dir, 'client/index.js')
+    home: path.join(dir, 'client', 'index.js')
   },
   output: {
-    path: path.join(dir, 'static/client'),
+    path: path.join(dir, 'static', 'client'),
     filename: '/js/[name].js'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
-    alias: {
-      "react": path.join(dir, 'bower_components/react/react'),
-      "react-dom": path.join(dir, 'bower_components/react/react-dom')
-    }
+    extensions: ['', '.js', '.jsx']
   },
   module: {
     preLoaders: [

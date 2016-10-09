@@ -11,6 +11,5 @@ static/client/css
 *.log
 
 # dependency directory
-bower_components
 node_modules
 vendor

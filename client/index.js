@@ -1,7 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
-ReactDOM.render(
-    <h1>Hello, world!</h1>,
-    document.getElementById('kubryant')
-);
+class App extends React.Component {
+  render() {
+    return (
+      <h1>Hello, world!</h1>
+    );
+  }
+}
+
+render(React.createElement(App), document.getElementById('kubryant'));
