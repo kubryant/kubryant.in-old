@@ -4,5 +4,5 @@ go:
   - tip
 
 install:
-  - curl https://glide.sh/get | sh
+  - mkdir $GOBIN/bin && curl https://glide.sh/get | sh
   - make install
