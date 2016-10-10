@@ -5,7 +5,6 @@ import (
 	"io"
 
 	"github.com/itsjamie/go-bindata-templates"
-
 	"github.com/labstack/echo"
 )
 

@@ -2,11 +2,12 @@ package main_test
 
 import (
 	"fmt"
-	"github.com/kubryant/kubryant.in/server"
 	"testing"
+
+	. "github.com/kubryant/kubryant.in/server"
 )
 
 func TestConfigs(t *testing.T) {
-	c := main.NewConfig()
+	c := NewConfig()
 	fmt.Println(c)
 }
