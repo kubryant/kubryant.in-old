@@ -1,6 +1,7 @@
 # go
 kubryant.in
 bindata.go
+profile.cov
 
 # build
 build

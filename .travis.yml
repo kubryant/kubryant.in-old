@@ -13,4 +13,4 @@ install:
 
 script:
   - make
-  - $HOME/gopath/bin/goveralls -service=travis-ci
+  - $HOME/gopath/bin/goveralls -service=travis-ci --ignore=server/bindata.go

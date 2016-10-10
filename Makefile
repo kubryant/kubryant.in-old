@@ -32,6 +32,7 @@ clean: kill
 	@if [ -f $(BINARY) ]; then rm -rf $(BINARY); fi
 	@if [ -f $(SERVER_DIR)/$(BINDATA) ]; then rm -rf $(SERVER_DIR)/$(BINDATA); fi
 	@if [ -d $(CLIENT_JS_FILES) ]; then rm -rf $(CLIENT_JS_FILES); fi
+	@if [ -f profile.cov ]; then rm profile.cov; fi
 
 install:
 	@go get -u github.com/jteeuwen/go-bindata/...
