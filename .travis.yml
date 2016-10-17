@@ -16,8 +16,12 @@ script:
     - make
     - "$HOME/gopath/bin/goveralls -service=travis-ci --ignore=server/bindata.go"
 
+
 before_deploy:
     - npm prune --production
+    - zip -r kubryant *
+    - mkdir -p deploy
+    - mv kubryant.zip deploy/kubryant.zip
 
 deploy:
     provider: s3
@@ -26,4 +30,5 @@ deploy:
     secret_access_key:
         secure: qKkReXiK4j68M9H2cHFpt1YaDnrJmzIz2GesMyLdBZ3voYpDaf7Ojmb9bauTigHSC1lpTn8ccms/rLmACYHNxO6zW/QhfTN9gAqOxXPxSEFn0IE1I3BaARnMLxJRds1l+gDftdbfN4ejC4KfnJGVPN0AOu27+jLmT2fi0TsneUuaxmSJsgC99JPaQ91hRGvg4nSpG3GIG98GaArUvtzhnRTKvNnpYBa53rRKS91HqKgxgs1v0PeZyyxnHx/4NbonO4YY97hCcbl0qmucWVld2CmYgPesx4Ra75GbubjTwd3yVctodU/3YA0PwyXhOusJtxMUw25t9dWBg19mf7+Regzw+zGV5NwF7N9ra+OGOPas6w6rBO53zXvqULPFMf/FCdBTeUSMuM9vsi8C/Stq2lIc4Qg23gZsMFSAxfatRVLhsxv7JsDqJBKve2+WqxNPqABc0aKF1VK/HAyPhtd1ZQhXMAunDDMg9WZ3EMVgNamgf7BdL7an5kiPpVTkX2Q6WKF2h5vjikyxqgbXFJeFSIqMdf6v6v/z9boV9n3wRHvU/mtKS3zrbdu8mo9GQEmrkGFucyMBr72cefBsLAG7GLfPsN4uTTEeg6rINc/ArS8jnmE5+IV2Jk4sjYJHZqsfJisaxejgz8GKrZf7uz+1utGlWuGnx+SGbMiZJi/G4Cg=
     bucket: kubryant
+    local_dir: deploy
     skip_cleanup: true
