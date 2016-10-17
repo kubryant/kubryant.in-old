@@ -16,6 +16,9 @@ script:
     - make
     - "$HOME/gopath/bin/goveralls -service=travis-ci --ignore=server/bindata.go"
 
+before_deploy:
+    - npm prune --production
+
 deploy:
     provider: s3
     access_key_id:

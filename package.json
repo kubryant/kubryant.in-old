@@ -13,7 +13,7 @@
     "url": "https://github.com/kubryant/kubryant.in/issues"
   },
   "homepage": "https://github.com/kubryant/kubryant.in#readme",
-  "dependencies": {
+  "devDependencies": {
     "babel-core": "6.17.0",
     "babel-eslint": "7.0.0",
     "babel-loader": "6.2.5",
@@ -24,10 +24,12 @@
     "eslint-plugin-react": "6.3.0",
     "file-loader": "0.9.0",
     "postcss-loader": "0.13.0",
-    "react": "15.3.2",
-    "react-dom": "15.3.2",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.13.2"
+  },
+  "dependencies": {
+    "react": "15.3.2",
+    "react-dom": "15.3.2"
   }
 }
