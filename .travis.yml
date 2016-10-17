@@ -15,3 +15,7 @@ install:
 script:
     - make
     - "$HOME/gopath/bin/goveralls -service=travis-ci --ignore=server/bindata.go"
+
+deploy:
+    provider: s3
+    bucket: kubryant
