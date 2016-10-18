@@ -40,3 +40,4 @@ deploy:
       bundle_type: zip
       application: kubryant
       deployment_group: production
+      wait-until-deployed: true
