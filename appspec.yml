@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+
+files:
+    - source: /
+      destination: /webapp
+
+hooks:
+    ApplicationStop:
+        - location: conf/deregister_from_elb.sh
+        - location: conf/stop_application.sh
+    ApplicationStart:
+        - location: conf/start_application.sh
+        - location: conf/register_with_elb.sh
