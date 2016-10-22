@@ -32,6 +32,8 @@ deploy:
       bucket: kubryant
       local_dir: deploy
       skip_cleanup: true
+      on: &3
+          branch: master
     - provider: codedeploy
       access_key_id: *1
       secret_access_key: *2
@@ -41,3 +43,4 @@ deploy:
       application: kubryant
       deployment_group: production
       wait-until-deployed: true
+      on: *3

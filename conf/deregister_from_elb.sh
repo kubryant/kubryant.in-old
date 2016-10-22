@@ -13,6 +13,9 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 
+msg "$(pwd)"
+msg "$(ls -la)"
+
 . $(dirname $0)/common_functions.sh
 
 msg "Running AWS CLI with region: $(get_instance_region)"
