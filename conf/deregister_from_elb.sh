@@ -15,10 +15,9 @@
 
 . $(dirname $0)/common_functions.sh
 
-msg "$(pwd)"
-msg "$(ls -la)"
-
 msg "Running AWS CLI with region: $(get_instance_region)"
+msg "Running AWS CLI from pwd: $(pwd)"
+msg "Running AWS CLI with folder contents: $(ls -la)"
 
 # get this instance's ID
 INSTANCE_ID=$(get_instance_id)
