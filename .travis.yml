@@ -19,9 +19,9 @@ script:
 
 before_deploy:
     - npm prune --production
-    - zip -r kubryant *
+    - zip -r kubryant-test *
     - mkdir -p deploy
-    - mv kubryant.zip deploy/kubryant.zip
+    - mv kubryant-test.zip deploy/kubryant-test.zip
 
 deploy:
     - provider: s3
@@ -38,7 +38,7 @@ deploy:
       access_key_id: *1
       secret_access_key: *2
       bucket: kubryant
-      key: kubryant.zip
+      key: kubryant-test.zip
       bundle_type: zip
       application: kubryant
       deployment_group: production
