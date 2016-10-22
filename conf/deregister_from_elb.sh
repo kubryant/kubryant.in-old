@@ -15,7 +15,7 @@
 
 . $(dirname $0)/common_functions.sh
 
-msg "Running AWS CLI with region: $(get_instance_region)"
+msg "Running AWS CLI with region (ASDSADFDS): $(get_instance_region)"
 msg "Running AWS CLI from pwd: $(pwd)"
 msg "Running AWS CLI with folder contents: $(ls -la)"
 
