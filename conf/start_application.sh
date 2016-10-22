@@ -1,1 +1,3 @@
-docker-compose -f docker-compose.dev.yml up -d
+pwd
+ls -la
+docker-compose -f ../docker-compose.dev.yml up -d
