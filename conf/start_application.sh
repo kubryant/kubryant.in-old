@@ -1,5 +1,6 @@
 #!/bin/bash
 
+. $(dirname $0)/common_functions.sh
 msg "$(pwd)"
 msg "$(ls -la)"
 
