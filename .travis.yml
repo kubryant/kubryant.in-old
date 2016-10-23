@@ -3,6 +3,11 @@ language: go
 go:
   - tip
 
+cache:
+  directories:
+    - node_modules
+    - vendor
+
 before_install:
   - go get github.com/mattn/goveralls
 
