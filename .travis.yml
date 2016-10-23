@@ -18,8 +18,7 @@ script:
 
 
 before_deploy:
-    - npm prune --production
-    - zip -r kubryant *
+    - zip -r kubryant appspec.yml conf/ docker-compose.* kubryant.in static/ vendor
     - mkdir -p deploy
     - mv kubryant.zip deploy/kubryant.zip
 
