@@ -18,7 +18,7 @@ script:
 
 
 before_deploy:
-    - zip -r kubryant appspec.yml conf/ docker-compose.* kubryant.in static/ vendor
+    - zip -r kubryant *
     - mkdir -p deploy
     - mv kubryant.zip deploy/kubryant.zip
 
