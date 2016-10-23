@@ -20,7 +20,7 @@ msg "Running AWS CLI with region (ASDSADFDS): $(get_instance_region)"
 # get this instance's ID
 INSTANCE_ID=$(get_instance_id)
 if [ $? != 0 -o -z "$INSTANCE_ID" ]; then
-	error_exit "Unable to get this instance's ID; cannot continue."
+  error_exit "Unable to get this instance's ID; cannot continue."
 fi
 
 # Get current time
@@ -30,58 +30,58 @@ start_sec=$(/bin/date +%s.%N)
 msg "Checking if instance $INSTANCE_ID is part of an AutoScaling group"
 asg=$(autoscaling_group_name $INSTANCE_ID)
 if [ $? == 0 -a -n "${asg}" ]; then
-	msg "Found AutoScaling group for instance $INSTANCE_ID: ${asg}"
+  msg "Found AutoScaling group for instance $INSTANCE_ID: ${asg}"
 
-	msg "Checking that installed CLI version is at least at version required for AutoScaling Standby"
-	check_cli_version
-	if [ $? != 0 ]; then
-		error_exit "CLI must be at least version ${MIN_CLI_X}.${MIN_CLI_Y}.${MIN_CLI_Z} to work with AutoScaling Standby"
-	fi
+  msg "Checking that installed CLI version is at least at version required for AutoScaling Standby"
+  check_cli_version
+  if [ $? != 0 ]; then
+    error_exit "CLI must be at least version ${MIN_CLI_X}.${MIN_CLI_Y}.${MIN_CLI_Z} to work with AutoScaling Standby"
+  fi
 
-	msg "Attempting to put instance into Standby"
-	autoscaling_enter_standby $INSTANCE_ID "${asg}"
-	if [ $? != 0 ]; then
-		error_exit "Failed to move instance into standby"
-	else
-		msg "Instance is in standby"
-		exit 0
-	fi
+  msg "Attempting to put instance into Standby"
+  autoscaling_enter_standby $INSTANCE_ID "${asg}"
+  if [ $? != 0 ]; then
+    error_exit "Failed to move instance into standby"
+  else
+    msg "Instance is in standby"
+    exit 0
+  fi
 fi
 
 msg "Instance is not part of an ASG, continuing..."
 
 msg "Checking that user set at least one valid target group"
 if test -z "$TARGET_GROUP_LIST"; then
-	error_exit "Must have at least one target group to deregister from"
+  error_exit "Must have at least one target group to deregister from"
 fi
 
 msg "Checking whehter the port number has been set"
 if test -n "$PORT"; then
-	if ! [[ $PORT =~ ^[0-9]+$ ]] ; then
-		error_exit "$PORT is not a valid port number"
-	fi
-	msg "Found port $PORT, it will be used for instance health check against target groups"
+  if ! [[ $PORT =~ ^[0-9]+$ ]] ; then
+    error_exit "$PORT is not a valid port number"
+  fi
+  msg "Found port $PORT, it will be used for instance health check against target groups"
 else
-	msg "PORT variable is not set, will use the default port number set in target groups"
+  msg "PORT variable is not set, will use the default port number set in target groups"
 fi
 
 # Loop through all target groups the user set, and attempt to deregister this instance from them.
 for target_group in $TARGET_GROUP_LIST; do
-	msg "Deregistering $INSTANCE_ID from $target_group starts"
-	deregister_instance $INSTANCE_ID $target_group
+  msg "Deregistering $INSTANCE_ID from $target_group starts"
+  deregister_instance $INSTANCE_ID $target_group
 
-	if [ $? != 0 ]; then
-		error_exit "Failed to deregister instance $INSTANCE_ID from target group $target_group"
-	fi
+  if [ $? != 0 ]; then
+    error_exit "Failed to deregister instance $INSTANCE_ID from target group $target_group"
+  fi
 done
 
 # Wait for all Deregistrations to finish
 msg "Waiting for instance to de-register from its target groups"
 for target_group in $TARGET_GROUP_LIST; do
-	wait_for_state "alb" $INSTANCE_ID "unused" $target_group
-	if [ $? != 0 ]; then
-		error_exit "Failed waiting for $INSTANCE_ID to leave $target_group"
-	fi
+  wait_for_state "alb" $INSTANCE_ID "unused" $target_group
+  if [ $? != 0 ]; then
+    error_exit "Failed waiting for $INSTANCE_ID to leave $target_group"
+  fi
 done
 
 msg "Finished $(basename $0) at $(/bin/date "+%F %T")"

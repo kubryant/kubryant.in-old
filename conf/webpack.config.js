@@ -20,11 +20,11 @@ var config = {
   },
   module: {
     preLoaders: [
-        {
-            test: /\.jsx$/,
-            include: path.join(dir, 'client'),
-            loader: 'eslint-loader'
-        }
+      {
+        test: /\.jsx$/,
+        include: path.join(dir, 'client'),
+        loader: 'eslint-loader'
+      }
     ],
     loaders: [
       // {

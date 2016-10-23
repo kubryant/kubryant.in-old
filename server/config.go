@@ -22,7 +22,7 @@ func (c *Config) Get(key string) string {
 
 func NewConfig() *Config {
 	c := make(map[string]string)
-	cs, err := Asset("conf/config.yml/config.yml")
+	cs, err := Asset("config.yml/config.yml")
 
 	error := yaml.Unmarshal(cs, &c)
 	if error != nil {

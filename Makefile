@@ -4,7 +4,7 @@ CLIENT_DIR = client
 GO_SOURCES = $(shell find $(SERVER_DIR) -type f -name '*.go')
 JS_SOURCES = $(shell find $(CLIENT_DIR) -type f -name '*.js')
 
-CONFIG = conf/config.yml
+CONFIG = config.yml
 STATIC_FILES = static
 CLIENT_JS_FILES = static/client/js
 
@@ -15,15 +15,17 @@ BINDATA_SOURCES = $(CONFIG) $(STATIC_FILES)/...
 .DEFAULT_GOAL: $(BINARY)
 .PHONY: server client kill clean
 
-$(BINARY): kill clean client server
+$(BINARY): kill clean client server run
 
 server:
 	@go-bindata $(BINDATA_FLAGS) $(BINDATA_SOURCES)
 	@go build -o=$(BINARY) $(SERVER_DIR)/*.go
-	@./$(BINARY) &
 
 client:
 	@./node_modules/webpack/bin/webpack.js --config ./conf/webpack.config.js
+
+run:
+		@./$(BINARY) &
 
 kill:
 	@killall -9 $(BINARY) 2>/dev/null || true

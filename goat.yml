@@ -1,22 +1,24 @@
 init_tasks:
- - command: "make"
+  - command: "make"
 
 watchers:
- - extension: go
-   directory: server
-   excludes:
-   - "bindata.go"
-   tasks:
-   - command: "make kill"
-   - command: "make server"
+  - extension: go
+    directory: server
+    excludes:
+      - "bindata.go"
+    tasks:
+      - command: "make kill"
+      - command: "make server"
+      - command: "make run"
 
- - extension: html
-   directory: static/templates
-   tasks:
-   - command: "make kill"
-   - command: "make server"
+  - extension: html
+    directory: static/templates
+    tasks:
+      - command: "make kill"
+      - command: "make server"
+      - command: "make run"
 
- - extension: js
-   directory: client
-   tasks:
-   - command: "make client"
+  - extension: js
+    directory: client
+    tasks:
+      - command: "make client"
