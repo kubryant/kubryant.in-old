@@ -25,7 +25,7 @@ client:
 	@./node_modules/webpack/bin/webpack.js --config ./conf/webpack.config.js
 
 run:
-		@./$(BINARY) &
+	@./$(BINARY) &
 
 kill:
 	@killall -9 $(BINARY) 2>/dev/null || true
@@ -35,6 +35,7 @@ clean: kill
 	@if [ -f $(SERVER_DIR)/$(BINDATA) ]; then rm -rf $(SERVER_DIR)/$(BINDATA); fi
 	@if [ -d $(CLIENT_JS_FILES) ]; then rm -rf $(CLIENT_JS_FILES); fi
 	@if [ -f profile.cov ]; then rm profile.cov; fi
+	@rm -rf *.log
 
 install:
 	@go get -u github.com/jteeuwen/go-bindata/...

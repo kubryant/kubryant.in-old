@@ -1,4 +1,9 @@
 FROM nginx:latest
 MAINTAINER Bryant Ku <ku.bryant@gmail.com>
 
-COPY conf/nginx.dev.conf /etc/nginx/nginx.conf
+RUN mkdir -p /etc/nginx/ssl
+COPY certs/kubryant.in/fullchain.pem /etc/nginx/ssl/fullchain.pem
+COPY certs/kubryant.in/privkey.pem /etc/nginx/ssl/privkey.pem
+COPY certs/dhparams.pem /etc/nginx/ssl/dhparams.pem
+
+COPY conf/nginx.production.conf /etc/nginx/nginx.conf
