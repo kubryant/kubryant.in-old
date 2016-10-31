@@ -9,6 +9,7 @@ services:
       - application
     ports:
       - "443:433"
+      - "80:80"
 
   application:
     build:
