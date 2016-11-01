@@ -9,13 +9,13 @@ STATIC_FILES = static
 CLIENT_JS_FILES = static/client/js
 
 BINDATA = bindata.go
-BINDATA_FLAGS = -prefix=$(STATIC_FILES) -o=$(SERVER_DIR)/$(BINDATA) -debug
+BINDATA_FLAGS = -prefix=$(STATIC_FILES) -o=$(SERVER_DIR)/$(BINDATA)
 BINDATA_SOURCES = $(CONFIG) $(STATIC_FILES)/...
 
 .DEFAULT_GOAL: $(BINARY)
 .PHONY: server client kill clean
 
-$(BINARY): kill clean client server run
+$(BINARY): kill clean client server
 
 server:
 	@go-bindata $(BINDATA_FLAGS) $(BINDATA_SOURCES)
