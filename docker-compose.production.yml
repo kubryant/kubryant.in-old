@@ -8,7 +8,7 @@ services:
     links:
       - application
     ports:
-      - "443:433"
+      - "443:443"
       - "80:80"
 
   application:
