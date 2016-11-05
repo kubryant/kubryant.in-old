@@ -1,4 +1,0 @@
-FROM nginx:latest
-MAINTAINER Bryant Ku <ku.bryant@gmail.com>
-
-COPY conf/nginx.dev.conf /etc/nginx/nginx.conf

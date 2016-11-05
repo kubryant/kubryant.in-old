@@ -1,0 +1,5 @@
+#!/bin/bash 
+
+cd /webapp
+bash -c "echo $(date) >> hello"
+./dehydrated -c -f letsencrypt.conf

@@ -1,0 +1,20 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "",
+            "Effect": "Allow",
+            "Action": [
+                "route53:ChangeResourceRecordSets",
+                "route53:ListHostedZones",
+                "elasticloadbalancing:DescribeLoadBalancers",
+                "elasticloadbalancing:SetLoadBalancerListenerSSLCertificate",
+                "acm:ListCertificates",
+                "acm:ImportCertificate"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}

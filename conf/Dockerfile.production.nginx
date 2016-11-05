@@ -1,9 +1,0 @@
-FROM nginx:latest
-MAINTAINER Bryant Ku <ku.bryant@gmail.com>
-
-RUN mkdir -p /etc/nginx/ssl
-COPY certs/nginx/nginx.crt /etc/nginx/ssl/nginx.crt
-COPY certs/nginx/nginx.key /etc/nginx/ssl/nginx.key
-COPY certs/dhparams.pem /etc/nginx/ssl/dhparams.pem
-
-COPY conf/nginx.production.conf /etc/nginx/nginx.conf
