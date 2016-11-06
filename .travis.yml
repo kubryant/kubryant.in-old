@@ -21,7 +21,7 @@ script:
   - "$HOME/gopath/bin/goveralls -service=travis-ci --ignore=server/bindata.go"
 
 before_deploy:
-  - zip -r kubryant Makefile appspec.yml conf/ config.yml docker-compose.production.yml server/ static/ vendor/
+  - zip -r kubryant appspec.yml conf/ docker-compose.production.yml kubryant.in
   - mkdir -p deploy
   - mv kubryant.zip deploy/kubryant.zip
 
